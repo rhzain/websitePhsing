@@ -1,6 +1,22 @@
-## 📅 websitePhsing 🎣
+## websitePhsing 🎣
 
 Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah aplikasi web yang memungkinkan pengguna untuk melakukan reservasi tempat pemancingan, melihat informasi kolam pemancingan, jenis ikan, serta mengelola pembayaran. Aplikasi ini dirancang agar responsif dan mudah digunakan oleh pengguna maupun administrator.
+
+## 📅 Timeline:
+**24-25 Mei (2 hari):**
+- Design
+- Repo GIT klo bisa
+- bagi tugas
+
+**26-28 Mei (3 hari):**
+- grind tugas(belajar & eksplor)
+ 
+**29-30 Mei (2 hari):**
+- 30% jadi 
+- buat laporan progres
+
+**31-5 Juni (6 hari):**
+- gas buat
 
 ### 🚀 Fitur
 
@@ -102,10 +118,6 @@ Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi, silakan
 3. Commit perubahan Anda (`git commit -am 'Menambahkan fitur baru'`).
 4. Push ke branch (`git push origin fitur-baru`).
 5. Buat Pull Request.
-
-### 📞 Kontak
-
-Jika Anda memiliki pertanyaan atau membutuhkan bantuan, jangan ragu untuk menghubungi kami melalui email di [support@pemancingan.com](mailto:support@pemancingan.com).
 
 ---
 
