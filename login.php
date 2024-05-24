@@ -1,5 +1,5 @@
 <?php
-include 'includes/config.php';
+include('../config.php');
 include 'includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
