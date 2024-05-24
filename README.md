@@ -29,9 +29,12 @@ Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah
 ### 📂 Struktur Folder
 
 ```
-phisnia
+├── phisnia/
 /
 │── config.php            # Koneksi database
+/
+├── css/
+│   ├── styles.css        # Desain
 /
 ├── includes/
 │   ├── header.php        # Header untuk halaman
