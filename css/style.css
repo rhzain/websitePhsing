@@ -1,0 +1,149 @@
+body {
+    font-family: "Cascadia Code", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ece9f8;
+}
+
+header {
+    background-color: #0a0423;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 10px; /* Menambahkan sudut melengkung */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+main {
+    padding: 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 15px;
+    max-width: 20%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.id_card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 300px; 
+    height: 450px; 
+    overflow: hidden;
+}
+
+.id_card img {
+    width: 100%; /* Make the image fill the container */
+    height: 400px;
+    object-fit: cover; 
+}
+
+.reservation-form, .login-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.who {
+    color: inherit; /* Use the default text color */
+    text-decoration: none;
+}
+
+.who:hover {
+    color: rgb(84, 25, 194);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form {
+    width: 100%; /* Take up full width of reservation box */
+}
+
+form input {
+    width: calc(100% - 22px); /* Adjust for padding and borders */
+    max-width: 500px; /* Cap width to avoid overflowing */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form select, form button {
+    width: 100%; /* Adjust for padding and borders */
+    max-width: 500px; /* Cap width to avoid overflowing */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #0a0423;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
