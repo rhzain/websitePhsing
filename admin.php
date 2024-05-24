@@ -1,5 +1,5 @@
 <?php
-include 'includes/config.php';
+include('../config.php');
 include 'includes/header.php';
 
 // Implement your admin functionality here
