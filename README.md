@@ -51,9 +51,9 @@ Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah
 ### 📂 sql query
 
 ```
-CREATE DATABASE fishing_db;
+CREATE DATABASE phisnia;
 
-USE fishing_db;
+USE phisnia;
 
 CREATE TABLE admin (
     id_admin INT AUTO_INCREMENT PRIMARY KEY,
