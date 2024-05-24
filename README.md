@@ -48,6 +48,82 @@ Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah
 └── README.md             # Dokumen ini
 ```
 
+### 📂 sql query
+
+```
+CREATE DATABASE fishing_db;
+
+USE fishing_db;
+
+CREATE TABLE admin (
+    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    nama_admin VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE pelanggan (
+    id_pelanggan INT AUTO_INCREMENT PRIMARY KEY,
+    nama_pelanggan VARCHAR(100) NOT NULL,
+    alamat_pelanggan TEXT NOT NULL,
+    no_telp VARCHAR(20),
+    alamat_email VARCHAR(100)
+);
+
+CREATE TABLE kolam_pemancingan (
+    id_kolam INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kolam VARCHAR(100) NOT NULL,
+    deskripsi TEXT,
+    kapasitas INT,
+    harga_perjam DECIMAL(10, 2)
+);
+
+CREATE TABLE ikan (
+    id_ikan INT AUTO_INCREMENT PRIMARY KEY,
+    nama_ikan VARCHAR(100) NOT NULL,
+    deskripsi TEXT,
+    harga_per_kg DECIMAL(10, 2)
+);
+
+CREATE TABLE reservasi (
+    id_reservasi INT AUTO_INCREMENT PRIMARY KEY,
+    id_pelanggan INT,
+    id_kolam INT,
+    tgl_pemakaian DATE,
+    waktu_mulai TIME,
+    waktu_selesai TIME,
+    status_reservasi VARCHAR(50),
+    FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id_pelanggan),
+    FOREIGN KEY (id_kolam) REFERENCES kolam_pemancingan(id_kolam)
+);
+
+CREATE TABLE hasilMancing (
+    id_hasilMancing INT AUTO_INCREMENT PRIMARY KEY,
+    id_reservasi INT,
+    id_ikan INT,
+    jumlah_ikan INT,
+    berat_total DECIMAL(10, 2),
+    FOREIGN KEY (id_reservasi) REFERENCES reservasi(id_reservasi),
+    FOREIGN KEY (id_ikan) REFERENCES ikan(id_ikan)
+);
+
+CREATE TABLE pembayaran (
+    id_pembayaran INT AUTO_INCREMENT PRIMARY KEY,
+    id_reservasi INT,
+    id_admin INT,
+    id_pelanggan INT,
+    id_hasilMancing INT,
+    tgl_pembayaran DATE,
+    jml_pembayaran DECIMAL(10, 2),
+    mtd_pembayaran VARCHAR(50),
+    FOREIGN KEY (id_reservasi) REFERENCES reservasi(id_reservasi),
+    FOREIGN KEY (id_admin) REFERENCES admin(id_admin),
+    FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id_pelanggan),
+    FOREIGN KEY (id_hasilMancing) REFERENCES hasilMancing(id_hasilMancing)
+);
+
+```
+
 ### 🛠️ Instalasi
 
 Ikuti langkah-langkah berikut untuk menginstal aplikasi ini secara manual tanpa menggunakan AMPPS atau XAMPP:
