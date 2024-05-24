@@ -2,7 +2,7 @@
 
 Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah aplikasi web yang memungkinkan pengguna untuk melakukan reservasi tempat pemancingan, melihat informasi kolam pemancingan, jenis ikan, serta mengelola pembayaran. Aplikasi ini dirancang agar responsif dan mudah digunakan oleh pengguna maupun administrator.
 
-## 📅 Timeline:
+### 📅 Timeline:
 **24-25 Mei (2 hari):**
 - Design
 - Repo GIT klo bisa
@@ -29,9 +29,11 @@ Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah
 ### 📂 Struktur Folder
 
 ```
+phisnia
+/
+│── config.php            # Koneksi database
 /
 ├── includes/
-│   ├── config.php        # Koneksi database
 │   ├── header.php        # Header untuk halaman
 │   └── footer.php        # Footer untuk halaman
 ├── admin.php             # Dashboard admin
