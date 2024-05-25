@@ -35,6 +35,9 @@
                 <label for="date">Tanggal Reservasi:</label>
                 <input type="date" id="date" name="date" required>
 
+                <label for="address">Alamat Pelanggan:</label>
+                <input type="text" id="address" name="address" required>
+
                 <label for="pool">Pilih Kolam Pemancingan:</label>
                 <select id="pool" name="pool" required>
                     <option value="Kolam A">Kolam A</option>
@@ -62,6 +65,12 @@
                     <option value="14:00">14:00</option>
                     <option value="15:00">15:00</option>
                     <option value="16:00">16:00</option>
+                </select>
+
+                <label for="pembayaran">Pembayaran:</label>
+                <select id="pembayaran" name="pembayaran" required>
+                    <option value="ots">Bayar di tempat</option>
+                    <option value="trf">Transfer</option>
                 </select>
 
                 <button type="submit" >Kirim Reservasi</button>

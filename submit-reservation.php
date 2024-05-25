@@ -1,17 +1,6 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root"; // default XAMPP username
-$password = ""; // default XAMPP password is empty
-$dbname = "phisnia"; // the name of your database
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include '../config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -21,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pool = $_POST['pool'];
     $start_time = $_POST['start-time'];
     $end_time = $_POST['end-time'];
+    $pembayaran = $_POST['pembayaran'];
 
     // Insert customer data into pelanggan table
     $sql_pelanggan = "INSERT INTO pelanggan (nama_pelanggan, no_telp, alamat_email) 
@@ -48,10 +38,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-
+    $status = '';
+    if($pembayaran='ots'){
+        $status='Belum Bayar';
+    } else {
+        $status='Sudah Bayar';
+    }
     // Insert reservation into reservasi table
     $sql_reservasi = "INSERT INTO reservasi (id_pelanggan, id_kolam, tgl_pemakaian, waktu_mulai, waktu_selesai, status_reservasi) 
-                      VALUES ('$last_customer_id', '$pool_id', '$date', '$start_time', '$end_time', 'Pending')";
+                      VALUES ('$last_customer_id', '$pool_id', '$date', '$start_time', '$end_time', '$status')";
     if ($conn->query($sql_reservasi) === TRUE) {
         echo "Reservation submitted successfully!";
     } else {

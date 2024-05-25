@@ -6,21 +6,12 @@ if (!isset($_SESSION['admin'])) {
 }
 
 // Database connection
-$servername = "localhost";
-$username = "root"; // default XAMPP username
-$password = ""; // default XAMPP password is empty
-$dbname = "phisnia"; // the name of your database
+include '../config.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Fetch reservations
-$sql = "SELECT * FROM reservasi";
+// Fetch reservations with customer information
+$sql = "SELECT r.id_reservasi, p.nama_pelanggan, p.alamat_email, p.no_telp, r.tgl_pemakaian, r.id_kolam, r.status_reservasi 
+        FROM reservasi r
+        INNER JOIN pelanggan p ON r.id_pelanggan = p.id_pelanggan";
 $result = $conn->query($sql);
 ?>
 
@@ -62,17 +53,20 @@ $result = $conn->query($sql);
                         <th>Phone</th>
                         <th>Date</th>
                         <th>Pool</th>
+                        <th>Status</th>
                     </tr>
                     <?php while($row = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['phone']; ?></td>
-                            <td><?php echo $row['date']; ?></td>
-                            <td><?php echo $row['pool']; ?></td>
+                            <td><?php echo $row['id_reservasi']; ?></td>
+                            <td><?php echo $row['nama_pelanggan']; ?></td>
+                            <td><?php echo $row['alamat_email']; ?></td>
+                            <td><?php echo $row['no_telp']; ?></td>
+                            <td><?php echo $row['tgl_pemakaian']; ?></td>
+                            <td><?php echo $row['id_kolam']; ?></td>
+                            <td><?php echo $row['status_reservasi']; ?></td>
                         </tr>
                     <?php endwhile; ?>
+
                 </table>
             <?php else: ?>
                 <p>No reservations found.</p>
