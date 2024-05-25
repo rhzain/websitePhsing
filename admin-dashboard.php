@@ -34,21 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         ?>
-        <!DOCTYPE html>
-        <html lang="id">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Phisnia</title>
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="icon" href="img/logo.png" type="image/png">
-        </head>
-        <body>
-            <?php echo 'Username atau password invalid.'?>
-        </body>
-        </html>
+        <div class="error-box">
+            Username atau password invalid.
+        </div>
         <?php
     }
+    
     
     $sql->close();
 }
