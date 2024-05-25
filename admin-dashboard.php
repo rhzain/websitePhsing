@@ -31,8 +31,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $_SESSION['admin'] = $username;
         header("Location: admin-panel.php");
+        exit;
     } else {
-        echo "Invalid username or password.";
+        ?>
+        <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Phisnia</title>
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="icon" href="img/logo.png" type="image/png">
+        </head>
+        <body>
+            <?php echo 'Username atau password invalid.'?>
+        </body>
+        </html>
+        <?php
     }
     
     $sql->close();

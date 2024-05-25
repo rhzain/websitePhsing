@@ -104,6 +104,14 @@ main {
     color: rgb(84, 25, 194);
 }
 
+.error-box {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+}
+
 form label {
     display: block;
     margin: 10px 0 5px;
