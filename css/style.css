@@ -95,6 +95,17 @@ main {
     flex-direction: column;
 }
 
+.passPeek {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .who {
     color: inherit; /* Use the default text color */
     text-decoration: none;

@@ -22,14 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: admin-panel.php");
         exit;
     } else {
-        ?>
-        <div class="error-box">
-            Username atau password invalid.
-        </div>
-        <?php
+        echo '<script>            
+             alert("Login failed. Invalid username or password!!")
+             window.location.href = "admin-login.php";
+             </script>';
     }
-    
-    
+
+
     $sql->close();
 }
 
