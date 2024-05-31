@@ -5,7 +5,7 @@ Selamat datang di repositori **Sistem Reservasi Tempat Pemancingan**! Ini adalah
 ### 📅 Timeline:
 **24-25 Mei (2 hari):**
 - Design
-- Repo GIT klo bisa
+- Repo GIT pasti bisa
 - bagi tugas
 
 **26-28 Mei (3 hari):**
