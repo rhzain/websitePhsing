@@ -1,15 +1,13 @@
 body {
-    font-family: "Cascadia Code", serif;
+    font-family: "Tw Cen MT";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
     margin: 0;
-    padding: 0;
+    height: 3240px;
+    position: relative;
     background-color: #ece9f8;
-}
-
-header {
-    background-color: #0a0423;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
 }
 
 nav ul {
@@ -25,22 +23,100 @@ nav ul li {
     margin-right: 10px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    border-radius: 10px; /* Menambahkan sudut melengkung */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+a div {
+    transition: transform 0.15s ease-in;
 }
 
-nav ul li a:hover {
-    background-color: white;
-    color: black;
+a div:hover {
+    transform: scale(1.1);
 }
 
 main {
     padding: 20px;
+}
+
+.phisnia {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 47px;
+    color: #000000;
+}
+
+.admin {
+    position: absolute;
+    right: 2.5%;
+    top: 1%;
+    font-family: 'Tw Cen MT';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #000000;
+}
+
+.tempat-mancing {
+    position: absolute;
+    width: 524px;
+    height: 113px;
+    left: calc(50% - 524px/2 + 397px);
+    top: 739px;
+    font-family: 'Tw Cen MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #FFFFFF;
+}
+
+.reservasi {
+    position: absolute;
+    width: 293px;
+    height: 52px;
+    left: calc(50% - 293px/2 + 581.5px);
+    top: 450px;
+    font-family: 'Tw Cen MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #2F2E2E;
+}
+
+.mari-mancing {
+    position: absolute;
+    width: 606.35px;
+    height: 248.48px;
+    left: calc(50% - 606.35px/2 + 488.18px);
+    top: 214.52px;
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 122.805px;
+    line-height: 128px;
+    color: #000000;
+}
+
+.svg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.deep-sea {
+    width: 100vw;
+    height: 300vh;
+    /* Full viewport height */
+    background: linear-gradient(to bottom, #6280CB, #121826);
+    /* Example gradient */
+    position: absolute;
+    top: 80%;
+    left: 0;
+    /* Initially hidden */
 }
 
 .intro {
@@ -59,7 +135,7 @@ main {
     padding: 15px;
     max-width: 20%;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
@@ -69,26 +145,28 @@ main {
     background-color: #fff;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
-    width: 300px; 
-    height: 450px; 
+    width: 300px;
+    height: 450px;
     overflow: hidden;
 }
 
 .id_card img {
-    width: 100%; /* Make the image fill the container */
+    width: 100%;
+    /* Make the image fill the container */
     height: 400px;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
-.reservation-form, .login-form {
+.reservation-form,
+.login-form {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: 0 auto;
     display: flex;
@@ -99,7 +177,7 @@ main {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 50px;
     margin: 0 auto;
     display: flex;
@@ -107,7 +185,8 @@ main {
 }
 
 .who {
-    color: inherit; /* Use the default text color */
+    color: inherit;
+    /* Use the default text color */
     text-decoration: none;
 }
 
@@ -129,21 +208,27 @@ form label {
 }
 
 form {
-    width: 100%; /* Take up full width of reservation box */
+    width: 100%;
+    /* Take up full width of reservation box */
 }
 
 form input {
-    width: calc(100% - 22px); /* Adjust for padding and borders */
-    max-width: 500px; /* Cap width to avoid overflowing */
+    width: calc(100% - 22px);
+    /* Adjust for padding and borders */
+    max-width: 500px;
+    /* Cap width to avoid overflowing */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-form select, form button {
-    width: 100%; /* Adjust for padding and borders */
-    max-width: 500px; /* Cap width to avoid overflowing */
+form select,
+form button {
+    width: 100%;
+    /* Adjust for padding and borders */
+    max-width: 500px;
+    /* Cap width to avoid overflowing */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -155,14 +240,4 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #0a0423;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }

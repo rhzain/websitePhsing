@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+}
+
+.phisnia {
+    position: absolute;
+    width: 332px;
+    height: 47px;
+    left: 43px;
+    top: 56px;
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 47px;
+    color: #000000;
+}
+
+.admin {
+    position: absolute;
+    width: 112px;
+    height: 52px;
+    left: 1767px;
+    top: 20px;
+    font-family: 'Tw Cen MT';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #000000;
+}
+
+.tempat-mancing {
+    position: absolute;
+    width: 524px;
+    height: 113px;
+    left: calc(50% - 524px/2 + 397px);
+    top: 739px;
+    font-family: 'Tw Cen MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #FFFFFF;
+}
+
+.reservasi {
+    position: absolute;
+    width: 293px;
+    height: 52px;
+    left: calc(50% - 293px/2 + 581.5px);
+    top: 450px;
+    font-family: 'Tw Cen MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    color: #2F2E2E;
+}
+
+.mari-mancing {
+    position: absolute;
+    width: 606.35px;
+    height: 248.48px;
+    left: calc(50% - 606.35px/2 + 488.18px);
+    top: 214.52px;
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 122.805px;
+    line-height: 128px;
+    color: #000000;
+}
+
+.rectangle8 {
+    position: absolute;
+    width: 50.5px;
+    height: 14.19px;
+    left: 1541px;
+    top: 274.91px;
+    background: #000000;
+    transform: matrix(0.99, -0.14, 0.09, 1, 0, 0);
+}
+
+.ellipse3 {
+    position: absolute;
+    width: 12.53px;
+    height: 12.53px;
+    left: 516.87px;
+    top: 462.05px;
+    background: #D9D9D9;
+}
+
+.ellipse2 {
+    position: absolute;
+    width: 5.01px;
+    height: 5.01px;
+    left: 768.64px;
+    top: 930.53px;
+    background: #D9D9D9;
+}
+
+.polygon1 {
+    position: absolute;
+    width: 6.18px;
+    height: 6.18px;
+    left: 778.12px;
+    top: 933.04px;
+    background: #D9D9D9;
+    transform: rotate(31.38deg);
+}
+
+.svg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

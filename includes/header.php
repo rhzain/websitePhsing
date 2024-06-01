@@ -11,19 +11,20 @@
 
 <body>
     <header>
-        <h1>Selamat Datang di Phisnia</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Beranda</a></li>
-                <li><a href="reservations.php">Reservasi</a></li>
+                <li><a href="index.php">
+                        <div class="phisnia">Phisnia\\</div>
+                    </a></li>
                 <li>
                     <?php
                     if (isset($_SESSION['admin'])) {
-                        echo '<a href="admin-panel.php">' . $_SESSION['admin'] . '</a>';
+                        echo '<a href="admin-panel.php"><div class="admin">' . $_SESSION['admin'] . '</div></a>';
                     } else {
-                        echo '<a href="admin-login.php">Admin</a>';
+                        echo '<a href="admin-login.php"><div class="admin">admin</div></a>';
                     }
                     ?>
+
                 </li>
             </ul>
         </nav>

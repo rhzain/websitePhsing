@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v1_2 {
+  width: 100%;
+  height: 2048px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v16_3 {
+  width: 221px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 38px;
+  left: 37px;
+  font-family: South Park;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+}
+.v17_6 {
+  width: 112px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 20px;
+  left: 154px;
+  font-family: Tw Cen MT;
+  font-weight: Italic;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+}
+.v17_10 {
+  width: 100%;
+  height: 544px;
+  background: rgba(56,87,162,0.800000011920929);
+  opacity: 1;
+  position: absolute;
+  top: 480px;
+  left: 0px;
+}
+.v17_9 {
+  width: 100%;
+  height: 546px;
+  background: rgba(29,48,95,0.800000011920929);
+  opacity: 1;
+  position: absolute;
+  top: 478px;
+  left: 1px;
+}
+.v17_13 {
+  width: 344px;
+  height: 99px;
+  background: url("../images/v17_13.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 472px;
+  left: 97px;
+  overflow: hidden;
+}
+.v17_11 {
+  width: 344px;
+  height: 99px;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 4px solid rgba(0,0,0,1);
+}
+.v17_4 {
+  width: 269px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 37px;
+  left: 37px;
+  font-family: South Park;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+}
+.v17_19 {
+  width: 266px;
+  height: 550px;
+  background: url("../images/v17_19.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 289px;
+  left: 269px;
+  overflow: hidden;
+}
+.v17_14 {
+  width: 258px;
+  height: 208px;
+  background: url("../images/v17_14.png");
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 8px solid rgba(0,0,0,1);
+}
+.v17_20 {
+  width: 10px;
+  height: 10px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 164px;
+  left: 53px;
+  border-radius: 50%;
+}
+.v17_15 {
+  height: 534px;
+  background: url("../images/v17_15.png");
+  opacity: 1;
+  position: absolute;
+  top: 6px;
+  left: 256px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.v17_16 {
+  width: 4px;
+  height: 4px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 538px;
+  left: 254px;
+  border-radius: 50%;
+}
+.v17_17 {
+  width: 7px;
+  height: 9px;
+  background: url("../images/v17_17.png");
+  opacity: 1;
+  position: absolute;
+  top: 541px;
+  left: 256px;
+  border: 2px solid rgba(0,0,0,1);
+}
+.name {
+  color: #fff;
+}
+.v18_31 {
+  width: 524px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 686px;
+  left: 702px;
+  font-family: Tw Cen MT;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+}
+.v18_30 {
+  width: 622px;
+  height: 379px;
+  background: url("../images/v18_30.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 91px;
+  left: 580px;
+  overflow: hidden;
+}
+.v18_21 {
+  width: 302px;
+  height: 235px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 121px;
+  border-radius: 50%;
+}
+.v18_22 {
+  width: 122px;
+  height: 38px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 128px;
+  left: 1px;
+  transform: rotate(-11deg);
+  overflow: hidden;
+}
+.v18_23 {
+  width: 180px;
+  height: 49px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 276px;
+  left: 0px;
+  transform: rotate(-37deg);
+  overflow: hidden;
+}
+.v18_24 {
+  width: 144px;
+  height: 49px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 360px;
+  left: 132px;
+  transform: rotate(-67deg);
+  overflow: hidden;
+}
+.v18_25 {
+  width: 90px;
+  height: 31px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 347px;
+  left: 12px;
+  transform: rotate(-90deg);
+  overflow: hidden;
+}
+.v18_26 {
+  width: 123px;
+  height: 41px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 368px;
+  left: 121px;
+  transform: rotate(-109deg);
+  overflow: hidden;
+}
+.v18_27 {
+  width: 174px;
+  height: 43px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 357px;
+  left: 258px;
+  transform: rotate(-129deg);
+  overflow: hidden;
+}
+.v18_28 {
+  width: 150px;
+  height: 37px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 243px;
+  left: 323px;
+  transform: rotate(-150deg);
+  overflow: hidden;
+}
+.v18_29 {
+  width: 130px;
+  height: 29px;
+  background: rgba(255,227,86,1);
+  opacity: 1;
+  position: absolute;
+  top: 129px;
+  left: 342px;
+  transform: rotate(-176deg);
+  overflow: hidden;
+}
+.v17_5 {
+  width: 606px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 204px;
+  left: 717px;
+  font-family: South Park;
+  font-weight: Regular;
+  font-size: 122px;
+  opacity: 1;
+  text-align: left;
+}
+.v18_34 {
+  width: 118px;
+  height: 128px;
+  background: url("../images/v18_34.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 202px;
+  left: 348px;
+  overflow: hidden;
+}
+.v18_32 {
+  width: 82px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 0px;
+  left: 36px;
+  font-family: South Park;
+  font-weight: Regular;
+  font-size: 122px;
+  opacity: 1;
+  text-align: left;
+}
+.v18_33 {
+  width: 50px;
+  height: 16px;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  position: absolute;
+  top: 61px;
+  left: 0px;
+  transform: rotate(-6deg);
+  overflow: hidden;
+}
