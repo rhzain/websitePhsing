@@ -187,24 +187,6 @@ Ikuti langkah-langkah berikut untuk menginstal aplikasi ini secara manual tanpa 
 5. **Jalankan Aplikasi**:
    - Buka browser dan akses aplikasi melalui URL lokal, misalnya: `http://localhost/`
 
-### 📚 Dokumentasi API
-
-- **Reservasi**:
-  - GET `/reservations`: Mendapatkan daftar semua reservasi.
-  - POST `/reservations`: Membuat reservasi baru.
-  
-- **Kolam Pemancingan**:
-  - GET `/pools`: Mendapatkan daftar semua kolam pemancingan.
-  - POST `/pools`: Menambahkan kolam pemancingan baru.
-  
-- **Ikan**:
-  - GET `/fish`: Mendapatkan daftar semua jenis ikan.
-  - POST `/fish`: Menambahkan jenis ikan baru.
-  
-- **Pembayaran**:
-  - GET `/payments`: Mendapatkan daftar semua pembayaran.
-  - POST `/payments`: Menambahkan pembayaran baru.
-
 ### 🎉 Kontribusi
 
 Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi, silakan lakukan langkah-langkah berikut:
