@@ -5,16 +5,10 @@
 }
 
 html, body {
-    font-family: "Tw Cen MT";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 52px;
     margin: 0;
-    height: 3240px;
+    height: 100%;
+    font-size: 24px;
     position: relative;
-    background-color: #ece9f8;
-
     display: flex;
     flex-direction: column;
 }
@@ -63,8 +57,8 @@ main {
 
 .admin {
     position: absolute;
-    right: 2.5vmax;
-    top: 5vmin;
+    right: 2.5vw;
+    top: 2vh;
     font-family: 'Tw Cen MT';
     font-style: italic;
     font-weight: 400;
@@ -136,7 +130,7 @@ main {
 .second-depth {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     top: 1080px;
     display: flex;
     align-items: center;
@@ -159,9 +153,9 @@ main {
 }
 
 .carousel {
-    width: 100%; /* Adjust width as needed */
-    max-width: 40vw; /* Maximum width */
-    height: 50%; /* Adjust height as needed */
+    width: 100%; 
+    max-width: 40vw; 
+    height: 50%; 
     display: flex;
     align-items: center;
 }
@@ -189,7 +183,7 @@ main {
 }
 
 .carousel-indicators button {
-    background-color: #333; /* Customize indicator color */
+    background-color: #333;
 }
 
 .intro {
@@ -209,17 +203,6 @@ main {
     margin-bottom: 20px;
 }
 
-.feature {
-    background-color: #fff;
-    padding: 15px;
-    max-width: 20%;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 .id_card {
     background-color: #fff;
     padding: 15px;
@@ -235,22 +218,72 @@ main {
 
 .id_card img {
     width: 100%;
-    /* Make the image fill the container */
     height: 400px;
     object-fit: cover;
 }
 
 .reservation-form,
 .login-form {
+    margin-top: 5vh;
+    width: 100%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 50vw;
     margin: 0 auto;
+    font-size: 1rem;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; */
+}
+
+.reservation-form input,
+.reservation-form select {
+    width: 100%;
+    height: 5vh;
+}
+
+.reservation-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.15s ease-in;
+}
+
+.reservation-form button:hover {
+    transform: scale(1.02);
+}
+
+.back {
+    margin: 20px;
+    font-family: 'South Park';
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 400;
+    bottom: 0;
+    position: fixed;
+}
+
+.back-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30%;
+    rotate: -180deg;
+    margin-right: 15px;
+}
+
+.panel {
     display: flex;
-    flex-direction: column;
-    font-size: 2rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5vh;
 }
 
 .passPeek {
@@ -266,7 +299,6 @@ main {
 
 .who {
     color: inherit;
-    /* Use the default text color */
     text-decoration: none;
 }
 
@@ -283,8 +315,17 @@ main {
 }
 
 .customer-info {
+    min-width: 30vw;
+    max-width: 50vw;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.panel form {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
 }
 
 .info-item {
@@ -299,22 +340,18 @@ main {
     margin-left: 10px;
 }
 
-
 form label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: bold;
 }
 
 form {
     width: 100%;
-    /* Take up full width of reservation box */
 }
 
 form input {
     width: calc(100% - 22px);
-    /* Adjust for padding and borders */
-    max-width: 500px;
-    /* Cap width to avoid overflowing */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -324,10 +361,7 @@ form input {
 form select,
 form button {
     width: 100%;
-    /* Adjust for padding and borders */
-    max-width: 500px;
-    /* Cap width to avoid overflowing */
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -363,7 +397,11 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Responsive CSS */
+a div{
+    text-decoration: none;
+    color: #000000;
+}
+
 @media screen and (max-width: 600px) {
     table {
         border: 0;
@@ -392,27 +430,6 @@ tr:nth-child(even) {
         float: left;
         font-weight: bold;
     }
-}
-
-/* Link buttons */
-a {
-    text-decoration: none;
-}
-
-/* Confirm delete */
-/* Hide the confirm delete button by default */
-#confirm-delete {
-    display: none;
-}
-
-/* Style for confirm delete button */
-.btn-delete {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 footer {

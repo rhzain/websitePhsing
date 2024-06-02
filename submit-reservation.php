@@ -20,29 +20,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['edit']) && $_POST['edit'] == 'true') {
         // Update existing reservation
         $id_reservasi = $_POST['id_reservasi'];
-        $sql_update_pelanggan = "UPDATE pelanggan SET nama_pelanggan='$name', alamat_pelanggan='$address', no_telp='$phone', alamat_email='$email'
-                                 WHERE id_pelanggan = (SELECT id_pelanggan FROM reservasi WHERE id_reservasi = '$id_reservasi')";
-        if ($conn->query($sql_update_pelanggan) !== TRUE) {
-            $message = "Error updating pelanggan: " . $conn->error;
+        $sql_pool_id = "SELECT id_kolam FROM kolam_pemancingan WHERE nama_kolam = '$pool'";
+        $result = $conn->query($sql_pool_id);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $pool_id = $row['id_kolam'];
         } else {
-            $sql_pool_id = "SELECT id_kolam FROM kolam_pemancingan WHERE nama_kolam = '$pool'";
-            $result = $conn->query($sql_pool_id);
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $pool_id = $row['id_kolam'];
-            } else {
-                $message = "Error: Kolam tidak ditemukan";
-            }
+            $message = "Error: Kolam tidak ditemukan";
+        }
 
-            if (empty($message)) {
-                $sql_update_reservasi = "UPDATE reservasi SET id_kolam='$pool_id', tgl_pemakaian='$date', waktu_mulai='$start_time', waktu_selesai='$end_time', status_reservasi='$status'
+        if (empty($message)) {
+            $sql_update_reservasi = "UPDATE reservasi SET id_kolam='$pool_id', waktu_mulai='$start_time', waktu_selesai='$end_time', status_reservasi='$status'
                                          WHERE id_reservasi='$id_reservasi'";
-                if ($conn->query($sql_update_reservasi) === TRUE) {
-                    $message = "Reservation updated successfully!";
-                    $redirect_url = "admin-panel.php";
-                } else {
-                    $message = "Error updating reservasi: " . $conn->error;
-                }
+            if ($conn->query($sql_update_reservasi) === TRUE) {
+                $message = "Reservation updated successfully!";
+                $redirect_url = "admin-panel.php";
+            } else {
+                $message = "Error updating reservasi: " . $conn->error;
             }
         }
     } else {
@@ -51,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql_check_empty);
         $row = $result->fetch_assoc();
         $count = $row['count'];
-        
+
         if ($count === 0) {
             $sql_reset_auto_increment = "ALTER TABLE reservasi AUTO_INCREMENT = 1";
             if ($conn->query($sql_reset_auto_increment) === TRUE) {
@@ -88,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-    
 }
 
 $conn->close();
@@ -96,6 +89,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Reservation Status</title>
@@ -113,6 +107,8 @@ $conn->close();
         });
     </script>
 </head>
+
 <body>
 </body>
+
 </html>

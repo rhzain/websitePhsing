@@ -30,14 +30,16 @@ $result = $conn->query($sql);
             <table border="1">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Pool</th>
-                    <th>Date</th>
+                    <th>Ponsel</th>
+                    <th>Kolam</th>
+                    <th>Tanggal</th>
                     <th>Waktu Mulai</th>
                     <th>Waktu Selesai</th>
                     <th>Status</th>
+                    <th>Ubah</th>
+                    <th>Hasil</th>
                 </tr>
                 <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
@@ -55,6 +57,10 @@ $result = $conn->query($sql);
                             </a>
                             <a href="delete-reservation.php?id=<?php echo $row['id_reservasi']; ?>" onclick="return confirm('Are you sure you want to delete this reservation?')">
                                 <button type="button">Delete</button>
+                            </a>
+                        </td>
+                        <td><a href="fishing-result.php?id=<?php echo $row['id_reservasi']; ?>">
+                                <button type="button">Go</button>
                             </a>
                         </td>
                     </tr>

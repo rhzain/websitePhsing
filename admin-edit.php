@@ -39,12 +39,10 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
 <?php include 'includes/header.php' ?>
 
 <main>
-    <section class="intro">
+    <div class="panel">
         <h2>Edit Reservasi</h2>
-        <h3>Pelanggan</h3>
-    </section>
-
-    <section>
+    </div>
+    <section class="panel">
         <div class="customer-info">
             <div class="info-item">
                 <div class="label">Nama:</div>
@@ -71,47 +69,47 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
                 <div class="value"><?php echo htmlspecialchars($row['alamat_pelanggan']); ?></div>
             </div>
         </div>
-        
-        <section class="reservation-form">
-            <label for="pool">Pilih Kolam Pemancingan:</label>
-            <select id="pool" name="pool">
-                <option value="Kolam A" <?php echo ($row['nama_kolam'] == 'Kolam A') ? 'selected' : ''; ?>>Kolam A</option>
-                <option value="Kolam B" <?php echo ($row['nama_kolam'] == 'Kolam B') ? 'selected' : ''; ?>>Kolam B</option>
-                <option value="Kolam C" <?php echo ($row['nama_kolam'] == 'Kolam C') ? 'selected' : ''; ?>>Kolam C</option>
-            </select>
+        <div class="form-container">
+            <form action="submit-reservation.php" method="post">
+                <label for="pool">Pilih Kolam Pemancingan:</label>
+                <select id="pool" name="pool">
+                    <option value="Kolam A" <?php echo ($row['nama_kolam'] == 'Kolam A') ? 'selected' : ''; ?>>Kolam A</option>
+                    <option value="Kolam B" <?php echo ($row['nama_kolam'] == 'Kolam B') ? 'selected' : ''; ?>>Kolam B</option>
+                    <option value="Kolam C" <?php echo ($row['nama_kolam'] == 'Kolam C') ? 'selected' : ''; ?>>Kolam C</option>
+                </select>
 
-            <label for="start-time">Waktu Mulai:</label>
-            <select id="start-time" name="start-time">
-                <?php
-                $times = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"];
-                foreach ($times as $time) {
-                    echo '<option value="' . $time . '"' . ($row['waktu_mulai'] == $time ? ' selected' : '') . '>' . $time . '</option>';
-                }
-                ?>
-            </select>
+                <label for="start-time">Waktu Mulai:</label>
+                <select id="start-time" name="start-time">
+                    <?php
+                    $times = ["09:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00"];
+                    foreach ($times as $time) {
+                        echo '<option value="' . $time . '"' . ($row['waktu_mulai'] == $time ? ' selected' : '') . '>' . $time . '</option>';
+                    }
+                    ?>
+                </select>
 
-            <label for="end-time">Waktu Selesai:</label>
-            <select id="end-time" name="end-time">
-                <?php
-                $times = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
-                foreach ($times as $time) {
-                    echo '<option value="' . $time . '"' . ($row['waktu_selesai'] == $time ? ' selected' : '') . '>' . $time . '</option>';
-                }
-                ?>
-            </select>
+                <label for="end-time">Waktu Selesai:</label>
+                <select id="end-time" name="end-time">
+                    <?php
+                    $times = ["10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00"];
+                    foreach ($times as $time) {
+                        echo '<option value="' . $time . '"' . ($row['waktu_selesai'] == $time ? ' selected' : '') . '>' . $time . '</option>';
+                    }
+                    ?>
+                </select>
 
-            <label for="pembayaran">Pembayaran:</label>
-            <select id="pembayaran" name="pembayaran">
-                <option value="ots" <?php echo ($row['status_reservasi'] == 'Belum Bayar') ? 'selected' : ''; ?>>Bayar di tempat</option>
-                <option value="trf" <?php echo ($row['status_reservasi'] == 'Sudah Bayar') ? 'selected' : ''; ?>>Transfer</option>
-            </select>
+                <label for="pembayaran">Pembayaran:</label>
+                <select id="pembayaran" name="pembayaran">
+                    <option value="ots" <?php echo ($row['status_reservasi'] == 'Belum Bayar') ? 'selected' : ''; ?>>Bayar di tempat</option>
+                    <option value="trf" <?php echo ($row['status_reservasi'] == 'Sudah Bayar') ? 'selected' : ''; ?>>Transfer</option>
+                </select>
 
-            <input type="hidden" name="id_reservasi" value="<?php echo $row['id_reservasi']; ?>">
-            <input type="hidden" name="edit" value="true">
+                <input type="hidden" name="id_reservasi" value="<?php echo $row['id_reservasi']; ?>">
+                <input type="hidden" name="edit" value="true">
 
-            <button type="submit">Update</button>
+                <button type="submit" class="btn-update">Update</button>
             </form>
-        </section>
+        </div>
     </section>
 </main>
 

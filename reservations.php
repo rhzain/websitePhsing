@@ -5,7 +5,7 @@ include 'includes\header.php';
 
 <main>
     <section class="reservation-form">
-        <h2>Formulir Reservasi</h2>
+        <h1>Formulir Reservasi</h1>
         <form action="submit-reservation.php" method="post">
             <label for="name">Nama:</label>
             <input type="text" id="name" name="name" required>
@@ -18,7 +18,7 @@ include 'includes\header.php';
 
             <label for="address">Alamat Pelanggan:</label>
             <input type="text" id="address" name="address" required>
-            
+
             <label for="date">Tanggal Reservasi:</label>
             <input type="date" id="date" name="date" required>
 
@@ -60,6 +60,15 @@ include 'includes\header.php';
             <button type="submit">Kirim Reservasi</button>
         </form>
     </section>
+    <a href="index.php">
+        <div class="back">
+            <div class="back-arrow" style="
+                max-width: 103.65px;max-height: 74.41px;right: 20%;top: 0;">
+                <img src="svg/arrow.svg" alt="arrow" style="width:100%; height:100%;">
+            </div>
+             Back
+        </div>
+    </a>
 </main>
 
 <?php include 'includes\footer.php' ?>

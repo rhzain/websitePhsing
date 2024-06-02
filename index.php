@@ -6,12 +6,12 @@ include 'includes\header.php';
 <main>
 
     <!-- Wave 2 -->
-    <div class="svg-container" style="left:0px; top:9.18%; width:100%; height:100vh;">
+    <div class="svg-container" style="left:0px; top:32vh; width:100%; height:100vh;">
         <img src="svg/wave 2.svg" alt="Wave 2" style="width:100%; height:100%;">
     </div>
 
     <!-- Wave 1 -->
-    <div class="svg-container" style="left:0px; top: 9%; width:100%; height:100vh;">
+    <div class="svg-container" style="left:0px; top: 32vh; width:100%; height:100vh;">
         <img src="svg/wave 1.svg" alt="Wave 1" style="width:100%; height:100%;">
         <div class="deep-sea"></div>
     </div>
