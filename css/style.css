@@ -1,13 +1,26 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
     font-family: "Tw Cen MT";
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 1.5rem;
     line-height: 52px;
     margin: 0;
     height: 3240px;
     position: relative;
     background-color: #ece9f8;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 5vh;
 }
 
 nav ul {
@@ -33,28 +46,29 @@ a div:hover {
 
 main {
     padding: 20px;
+    flex: 1;
 }
 
 .phisnia {
     position: absolute;
-    left: 2.5%;
-    top: 2%;
+    left: 2.5vmax;
+    top: 6vmin;
     font-family: 'South Park';
     font-style: normal;
     font-weight: 400;
-    font-size: 72px;
+    font-size: 4vmax;
     line-height: 47px;
     color: #000000;
 }
 
 .admin {
     position: absolute;
-    right: 2.5%;
-    top: 1%;
+    right: 2.5vmax;
+    top: 5vmin;
     font-family: 'Tw Cen MT';
     font-style: italic;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 3vmax;
     line-height: 52px;
     color: #000000;
 }
@@ -75,10 +89,10 @@ main {
 
 .reservasi {
     position: absolute;
-    width: 293px;
-    height: 52px;
-    left: calc(50% - 293px/2 + 581.5px);
-    top: 450px;
+    max-width: 293px;
+    max-height: 52px;
+    right: 10%;
+    bottom: -10%;
     font-family: 'Tw Cen MT';
     font-style: normal;
     font-weight: 400;
@@ -89,10 +103,10 @@ main {
 
 .mari-mancing {
     position: absolute;
-    width: 606.35px;
-    height: 248.48px;
+    max-width: 606.35px;
+    max-height: 248.48px;
     left: calc(50% - 606.35px/2 + 488.18px);
-    top: 214.52px;
+    top: 20vh;
     font-family: 'South Park';
     font-style: normal;
     font-weight: 400;
@@ -108,20 +122,85 @@ main {
 }
 
 .deep-sea {
-    width: 100vw;
+    width: 100%;
     height: 300vh;
     /* Full viewport height */
     background: linear-gradient(to bottom, #6280CB, #121826);
     /* Example gradient */
     position: absolute;
-    top: 80%;
+    top: 40%;
     left: 0;
     /* Initially hidden */
 }
 
+.second-depth {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    top: 1080px;
+    display: flex;
+    align-items: center;
+}
+
+.left-half {
+    width: 50vw; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.right-half {
+    width: 50vw; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.carousel {
+    width: 100%; /* Adjust width as needed */
+    max-width: 40vw; /* Maximum width */
+    height: 50%; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+}
+
+.desc-kolam{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 85%;
+    font-family: 'Tw Cen MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 50px;
+    color: #fff;
+}
+
+.title-kolam{
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding: 10px 0;
+    color: #ffffff;
+}
+
+.carousel-indicators button {
+    background-color: #333; /* Customize indicator color */
+}
+
 .intro {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    line-height: 3px;
+}
+
+.intro a {
+    color: #000000;
+    text-decoration: none;
 }
 
 .features {
@@ -171,6 +250,7 @@ main {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    font-size: 2rem;
 }
 
 .passPeek {
@@ -201,6 +281,24 @@ main {
     border: 1px solid #ebccd1;
     border-radius: 4px;
 }
+
+.customer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    margin-left: 10px;
+}
+
 
 form label {
     display: block;
@@ -240,4 +338,88 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr,
+    table td {
+        display: block;
+        border: 1px solid #ccc;
+    }
+
+    table td {
+        text-align: left;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+}
+
+/* Link buttons */
+a {
+    text-decoration: none;
+}
+
+/* Confirm delete */
+/* Hide the confirm delete button by default */
+#confirm-delete {
+    display: none;
+}
+
+/* Style for confirm delete button */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    color: #FFFFFF;
+    z-index: 1;
+    right: 1rem;
+    bottom: 0;
+    font-size: 18px;
+    position: fixed;
 }

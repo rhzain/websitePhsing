@@ -20,9 +20,8 @@ $result = $conn->query($sql);
 <?php include 'includes\header.php' ?>
 
 <main>
-    <section>
+    <section class="intro">
         <h2>Welcome, <?php echo $_SESSION['admin']; ?>!</h2>
-        <a href="logout.php">Logout</a>
     </section>
 
     <section>
