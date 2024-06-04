@@ -74,8 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql_reservasi = "INSERT INTO reservasi (id_pelanggan, id_kolam, tgl_pemakaian, waktu_mulai, waktu_selesai, status_reservasi) 
                                   VALUES ('$last_customer_id', '$pool_id', '$date', '$start_time', '$end_time', '$status')";
                 if ($conn->query($sql_reservasi) === TRUE) {
-                    $message = "Reservation submitted successfully!";
-                    $redirect_url = "index.php";
+                    $message = "Reservation submitted successfully!"; 
+                    $reservation_id = $conn->insert_id;                   
+                    $redirect_url = "receipt.php?op=kolam&id=$reservation_id";
                 } else {
                     $message = "Error inserting reservasi: " . $conn->error;
                 }

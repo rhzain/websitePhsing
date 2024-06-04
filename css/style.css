@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
+    width: 100vw;
+    min-height: 100vh;
     height: 100%;
     font-size: 24px;
     position: relative;
@@ -39,8 +42,20 @@ a div:hover {
 }
 
 main {
-    padding: 20px;
-    flex: 1;
+    margin-top: 2vh;
+}
+
+section {
+    margin: 0 2vw;
+}
+
+.bg-res {
+    height: 120%;
+    width: 100%;
+    align-items: center;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
 }
 
 .phisnia {
@@ -115,52 +130,80 @@ main {
     height: 100%;
 }
 
+.waves {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+}
+
+.wave.wave1 {
+    animation: wavy linear 25s infinite;
+}
+
+.wave.wave2 {
+    animation: wavy linear 15s infinite;
+}
+
+@keyframes wavy {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .deep-sea {
+    position: absolute;
     width: 100%;
     height: 300vh;
-    /* Full viewport height */
     background: linear-gradient(to bottom, #6280CB, #121826);
-    /* Example gradient */
-    position: absolute;
-    top: 40%;
     left: 0;
-    /* Initially hidden */
+    margin-top: 100vh;
+    z-index: -1;
 }
 
 .second-depth {
     position: relative;
-    width: 100%;
-    height: 100vh; 
+    width: 100vw;
+    height: 100vh;
     top: 1080px;
     display: flex;
     align-items: center;
 }
 
 .left-half {
-    width: 50vw; 
+    width: 50vw;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .right-half {
-    width: 50vw; 
+    width: 50vw;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .carousel {
-    width: 100%; 
-    max-width: 40vw; 
-    height: 50%; 
+    width: 100%;
+    max-width: 40vw;
+    height: 50%;
     display: flex;
     align-items: center;
 }
 
-.desc-kolam{
+.desc-kolam {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -173,7 +216,11 @@ main {
     color: #fff;
 }
 
-.title-kolam{
+.desc-kolam a {
+    text-decoration: none;
+}
+
+.title-kolam {
     font-family: 'South Park';
     font-style: normal;
     font-weight: 400;
@@ -222,20 +269,31 @@ main {
     object-fit: cover;
 }
 
+.manage-fish {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.manage-fish input,
+.manage-fish select {
+    width: 100%;
+    height: 5vh;
+}
+
 .reservation-form,
 .login-form {
-    margin-top: 5vh;
     width: 100%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     max-width: 50vw;
-    margin: 0 auto;
     font-size: 1rem;
-    /* display: flex;
+    /* margin-left: auto; */
+    display: flex;
     flex-wrap: wrap;
-    flex-direction: column; */
+    flex-direction: column;
 }
 
 .reservation-form input,
@@ -306,14 +364,6 @@ main {
     color: rgb(84, 25, 194);
 }
 
-.error-box {
-    background-color: #f2dede;
-    color: #a94442;
-    padding: 10px;
-    border: 1px solid #ebccd1;
-    border-radius: 4px;
-}
-
 .customer-info {
     min-width: 30vw;
     max-width: 50vw;
@@ -338,6 +388,10 @@ main {
 
 .value {
     margin-left: 10px;
+}
+
+section a {
+    text-decoration: none;
 }
 
 form label {
@@ -397,7 +451,7 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-a div{
+a div {
     text-decoration: none;
     color: #000000;
 }

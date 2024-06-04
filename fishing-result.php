@@ -19,11 +19,15 @@ $sql_reservation = "SELECT * FROM reservasi WHERE id_reservasi = $reservation_id
 $result_reservation = $conn->query($sql_reservation);
 $reservation = $result_reservation->fetch_assoc();
 
-$sql_fish = "SELECT h.*, i.nama_ikan, i.harga_per_kg 
-             FROM hasilMancing h 
-             INNER JOIN ikan i ON h.id_ikan = i.id_ikan 
-             WHERE h.id_reservasi = $reservation_id AND h.jumlah_ikan > 0";
-$result_fish = $conn->query($sql_fish);
+$sql_fishResult = "SELECT h.*, i.nama_ikan, i.harga_per_kg 
+                   FROM hasilMancing h 
+                   INNER JOIN ikan i ON h.id_ikan = i.id_ikan 
+                   WHERE h.id_reservasi = $reservation_id AND h.jumlah_ikan > 0";
+$result_fish = $conn->query($sql_fishResult);
+
+$sql_fish = "SELECT id_ikan, nama_ikan, harga_per_kg 
+             FROM ikan";
+$fishes = $conn->query($sql_fish);
 
 // Calculate total price based on fish caught
 $total_price = 0;
@@ -40,20 +44,20 @@ while ($fish = $result_fish->fetch_assoc()) {
 
 <main>
     <section class="intro">
-        <h2>Fishing Result for Reservation ID: <?php echo $reservation_id; ?></h2>
-        <p>Reservation Date: <?php echo $reservation['tgl_pemakaian']; ?></p>
-        <p>Time: <?php echo $reservation['waktu_mulai'] . ' - ' . $reservation['waktu_selesai']; ?></p>
+        <h3>Hasil Mancing untuk Reservation ID: <?php echo $reservation_id; ?></h3>
+        <p>Tanggal Reservasi: <?php echo $reservation['tgl_pemakaian']; ?></p>
+        <p>Jam: <?php echo $reservation['waktu_mulai'] . ' - ' . $reservation['waktu_selesai']; ?></p>
     </section>
 
     <section>
-        <h2>Fish Caught</h2>
+        <h3>Hasil Mancing</h3>
         <?php if (!empty($fish_data)) : ?>
             <table border="1">
                 <tr>
-                    <th>Fish Name</th>
-                    <th>Quantity</th>
-                    <th>Total Weight (kg)</th>
-                    <th>Price per kg (USD)</th>
+                    <th>Nama Ikan</th>
+                    <th>Kuantitas</th>
+                    <th>Total Berat (kg)</th>
+                    <th>Harga per kg (IDR)</th>
                 </tr>
                 <?php foreach ($fish_data as $fish) : ?>
                     <tr>
@@ -64,28 +68,30 @@ while ($fish = $result_fish->fetch_assoc()) {
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <p>Total Price: <?php echo number_format($total_price, 2); ?> USD</p>
+            <p>Total Harga: Rp<?php echo number_format($total_price, 2); ?></p>
         <?php else : ?>
-            <p>No fish caught for this reservation.</p>
+            <p>Tidak ada hasil untuk reservasi ini.</p>
         <?php endif; ?>
+        <a href="receipt.php?op=mancing&id=<?php echo $reservation_id; ?>" target="_blank">Print Receipt</a>
 
-        <h2>Manage Fish Caught Manually</h2>
-        <form action="manage-fish.php" method="post">
-            <input type="hidden" name="reservation_id" value="<?php echo $reservation_id; ?>">
-            <label for="fish_name">Select Fish:</label>
-            <select id="fish_name" name="fish_name" required>
-                <?php foreach ($fish_data as $fish) : ?>
-                    <option value="<?php echo $fish['id_ikan']; ?>"><?php echo $fish['nama_ikan']; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" required>
-            <label for="total_weight">Total Weight (kg):</label>
-            <input type="number" id="total_weight" name="total_weight" step="0.01" required>
-            <button type="submit">Add Fish</button>
-        </form>
+        <h3>Kelola Hasil Mancing</h3>
+        <div class="manage-fish">
+            <form action="manage-fish.php" method="post">
+                <input type="hidden" name="reservation_id" value="<?php echo $reservation_id; ?>">
+                <label for="fish_name">Select Fish:</label>
+                <select id="fish_name" name="fish_name" required>
+                    <?php foreach ($fishes as $fish) : ?>
+                        <option value="<?php echo $fish['id_ikan']; ?>"><?php echo $fish['nama_ikan']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+                <label for="total_weight">Total Weight (kg):</label>
+                <input type="number" id="total_weight" name="total_weight" step="0.01" required>
+                <button type="submit">Tambahkan Hasil Mancing</button>
+            </form>
+        </div>
     </section>
-    <a href="receipt.php?id=<?php echo $reservation_id; ?>" target="_blank">Print Receipt</a>
 </main>
 
 <?php include 'includes/footer.php' ?>
