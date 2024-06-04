@@ -1,7 +1,3 @@
-<?php
-$isDark = true;
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 

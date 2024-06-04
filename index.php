@@ -3,7 +3,7 @@ session_start();
 include 'includes\header.php';
 ?>
 
-<main>
+<main class="index">
     <div class="waves">
         <div class="wave wave2"><img src="svg/wave2.svg" alt="wave2"></div>
         <div class="wave wave1"><img src="svg/wave1.svg" alt="wave1"></div>

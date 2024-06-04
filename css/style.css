@@ -18,6 +18,7 @@ body {
 
 header {
     padding: 5vh;
+    color: #ffffff;
 }
 
 nav ul {
@@ -43,19 +44,32 @@ a div:hover {
 
 main {
     margin-top: 2vh;
+    padding: 2vh 2vw;
 }
 
-section {
-    margin: 0 2vw;
+main.index {
+    padding: 0;
+}
+
+main.res {
+    height: 120%;
+}
+
+.tengah {
+    display: flex;
+    justify-content: center;
 }
 
 .bg-res {
-    height: 120%;
+    height: calc(100% + 5vh);
     width: 100%;
-    align-items: center;
     z-index: -1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background: url(../img/wood.png);
+    background-size: 100%;
+    /* background-repeat: no-repeat; */
 }
 
 .phisnia {
@@ -283,21 +297,29 @@ section {
 
 .reservation-form,
 .login-form {
-    width: 100%;
+    height: fit-content;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 50vw;
+    width: 50vw;
     font-size: 1rem;
-    /* margin-left: auto; */
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center!important;
     flex-direction: column;
 }
 
+.login-form{
+    width: 30vw;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.5);
+}
+
 .reservation-form input,
-.reservation-form select {
+.reservation-form select,
+.login-form input,
+.login-form select {
     width: 100%;
     height: 5vh;
 }
@@ -320,6 +342,7 @@ section {
 
 .back {
     margin: 20px;
+    color: white;
     font-family: 'South Park';
     font-style: normal;
     font-size: 40px;
@@ -337,11 +360,49 @@ section {
     margin-right: 15px;
 }
 
-.panel {
+.back-arrow img{
+    filter: invert(100%);
+}
+
+main.log {
+    padding: 5vh;
     display: flex;
     justify-content: center;
+    height: 100%;
+}
+
+main.log div.waves {
+    height: 100vh;
+}
+
+main.pnl {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.5);
+    border-radius: 20px;
+    border: 0.1px solid white;
     width: 100%;
-    margin-top: 5vh;
+    height: calc(fit-content + 20%);
+}
+
+main.pnl .panel {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 1em;
+}
+
+.panel {
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    margin-top: 0vh;
 }
 
 .passPeek {

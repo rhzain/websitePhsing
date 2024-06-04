@@ -3,7 +3,7 @@ session_start();
 include 'includes\header.php';
 ?>
 
-<main>
+<main class="res">
     <div class="bg-res">
         <div class="reservation-form">
             <h1>Formulir Reservasi</h1>

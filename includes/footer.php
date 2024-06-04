@@ -1,4 +1,4 @@
-<footer>
+<footer class="<?php echo $isDark ? 'dark' : 'light'?>">
     <p>&copy;
         <a href="aboutUs.php" class="who">Phisnia</a>. All rights revoked.
     </p>
