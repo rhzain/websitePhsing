@@ -12,14 +12,18 @@ include '../config.php';
 $sql = "SELECT r.*, p.nama_pelanggan, p.alamat_email, p.no_telp, k.nama_kolam
         FROM reservasi r
         INNER JOIN pelanggan p ON r.id_pelanggan = p.id_pelanggan
-        INNER JOIN kolam_pemancingan k ON r.id_kolam = k.id_kolam;
-";
+        INNER JOIN kolam_pemancingan k ON r.id_kolam = k.id_kolam
+        ORDER BY r.id_pelanggan";
 $result = $conn->query($sql);
 ?>
 
 <?php include 'includes\header.php' ?>
 
 <main>
+    <!-- Sun -->
+    <div class="svg-container" style="width: 33vw;height: 20vh;left: 45vw;top: 0;">
+        <img src="svg/sun.svg" alt="Sun" style="width:100%; height:100%;">
+    </div>
     <section class="intro">
         <h2>Welcome, <?php echo $_SESSION['admin']; ?>!</h2>
     </section>
@@ -52,7 +56,7 @@ $result = $conn->query($sql);
                         <td><?php echo $row['waktu_mulai']; ?></td>
                         <td><?php echo $row['waktu_selesai']; ?></td>
                         <td><?php echo $row['status_reservasi']; ?></td>
-                        <td><a href="admin-edit.php?op=edit&waktu_mulai=<?php echo urlencode($row['waktu_mulai']); ?>&waktu_selesai=<?php echo urlencode($row['waktu_selesai']); ?>">
+                        <td><a href="admin-edit.php?op=edit&id=<?php echo $row['id_reservasi']; ?>&waktu_mulai=<?php echo urlencode($row['waktu_mulai']); ?>&waktu_selesai=<?php echo urlencode($row['waktu_selesai']); ?>">
                                 <button type="button">Edit</button>
                             </a>
                             <a href="delete-reservation.php?id=<?php echo $row['id_reservasi']; ?>" onclick="return confirm('Are you sure you want to delete this reservation?')">

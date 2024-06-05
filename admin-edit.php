@@ -23,7 +23,7 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
     $stmt->bind_param("ss", $waktu_mulai, $waktu_selesai);
     $stmt->execute();
     $result = $stmt->get_result();
-
+    
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
@@ -34,6 +34,9 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
     echo "Invalid request.";
     exit();
 }
+
+    $sql_kolam = "SELECT * FROM kolam_pemancingan";
+    $kolam = $conn->query($sql_kolam);
 ?>
 
 <?php include 'includes/header.php' ?>
@@ -78,9 +81,11 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
                 <form action="submit-reservation.php" method="post">
                     <label for="pool">Pilih Kolam Pemancingan:</label>
                     <select id="pool" name="pool">
-                        <option value="Kolam A" <?php echo ($row['nama_kolam'] == 'Kolam A') ? 'selected' : ''; ?>>Kolam A</option>
-                        <option value="Kolam B" <?php echo ($row['nama_kolam'] == 'Kolam B') ? 'selected' : ''; ?>>Kolam B</option>
-                        <option value="Kolam C" <?php echo ($row['nama_kolam'] == 'Kolam C') ? 'selected' : ''; ?>>Kolam C</option>
+                        <?php while ($res = $kolam->fetch_assoc()) : ?>
+                            <option value="<?php echo $res['id_kolam']; ?>" <?php echo ($res['id_kolam'] == $row['id_kolam']) ? 'selected' : ''; ?>>
+                                <?php echo $res['nama_kolam']; ?>
+                            </option>
+                        <?php endwhile; ?>
                     </select>
 
                     <label for="start-time">Waktu Mulai:</label>

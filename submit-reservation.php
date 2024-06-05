@@ -15,22 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $start_time = $_POST['start-time'];
     $end_time = $_POST['end-time'];
     $pembayaran = $_POST['pembayaran'];
-    $status = ($pembayaran == 'ots') ? 'Belum Bayar' : 'Sudah Bayar';
+    $status = ($pembayaran == 'trf') ? 'Belum Bayar' : 'Sudah Bayar';
 
-    if (isset($_POST['edit']) && $_POST['edit'] == 'true') {
+    if (isset($_POST['edit']) && $_POST['edit'] == 'true') { //dit
         // Update existing reservation
         $id_reservasi = $_POST['id_reservasi'];
-        $sql_pool_id = "SELECT id_kolam FROM kolam_pemancingan WHERE nama_kolam = '$pool'";
-        $result = $conn->query($sql_pool_id);
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $pool_id = $row['id_kolam'];
-        } else {
-            $message = "Error: Kolam tidak ditemukan";
-        }
 
         if (empty($message)) {
-            $sql_update_reservasi = "UPDATE reservasi SET id_kolam='$pool_id', waktu_mulai='$start_time', waktu_selesai='$end_time', status_reservasi='$status'
+            $sql_update_reservasi = "UPDATE reservasi SET id_kolam='$pool', waktu_mulai='$start_time', waktu_selesai='$end_time', status_reservasi='$status'
                                          WHERE id_reservasi='$id_reservasi'";
             if ($conn->query($sql_update_reservasi) === TRUE) {
                 $message = "Reservation updated successfully!";
@@ -39,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $message = "Error updating reservasi: " . $conn->error;
             }
         }
-    } else {
+    } else { //reservasi
         // Check if the reservation table is empty and reset auto-increment if needed
         $sql_check_empty = "SELECT COUNT(*) AS count FROM reservasi";
         $result = $conn->query($sql_check_empty);
@@ -61,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "Error inserting pelanggan: " . $conn->error;
         } else {
             $last_customer_id = $conn->insert_id;
-            $sql_pool_id = "SELECT id_kolam FROM kolam_pemancingan WHERE nama_kolam = '$pool'";
+            $sql_pool_id = "SELECT id_kolam FROM kolam_pemancingan WHERE id_kolam = '$pool'";
             $result = $conn->query($sql_pool_id);
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();

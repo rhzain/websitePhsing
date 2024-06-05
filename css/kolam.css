@@ -1,0 +1,315 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header {
+    position: relative;
+    padding: 5vh;
+    color: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a div {
+    transition: transform 0.15s ease-in;
+    text-decoration: none;
+}
+
+a div:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 2vh 2vw;
+    font-family: 'Tw Cen MT';
+}
+
+main.index {
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 200vh;
+}
+
+.phisnia {
+    position: absolute;
+    text-decoration: none;
+    left: 2.5vw;
+    top: 5vh;
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vmax;
+    line-height: 47px;
+    color: #000000;
+}
+
+.parralax,
+.kolam-box {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    /* perspective: 10px;
+    transform-style: preserve-3d; */
+    
+}
+
+.parallax {
+    min-height: 100vh;
+    position: relative;
+    top: -5vh;
+     /* Adjust according to the amount of content */
+    /* transform-style: preserve-3d; */
+}
+
+.kolam-box {
+    background: linear-gradient(to bottom, #6280CB, #121826);
+}
+
+.left-half {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-half {
+    /* border: 1px solid white; */
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    top: 10vh;
+    font-size: 10em;
+    position: absolute;
+    font-family: 'South Park';
+    display: flex;
+    justify-content: center;
+    /* scale: 100vw; */
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.sun {
+    width: auto;
+    top: -5vh;
+    right: 5vw;
+    /* margin-top: 0; */
+    /* position: absolute; */
+}
+
+/* .sun {
+    transform: translateZ(-1px) scale(2); 
+}
+
+.title {
+    transform: translateZ(-1.5px) scale(2.5);
+}
+
+.obj1 {
+    transform: translateZ(-0.75px) scale(1.75);
+} */
+
+.cliff,
+.obj1 {
+    max-width: fit-content;
+    position: absolute;
+    left: -5vw;
+    top: 50vh;
+}
+
+.obj1 img {
+    width: 30vw;
+}
+
+.rod {
+    top: -20%;
+    left: 75%;
+}
+
+.rod img {
+    width: fit-content;
+}
+
+/* .obj2 {
+    transform: translateZ(-1px) scale(2);
+} */
+
+.obj2 {
+    max-width: fit-content;
+    position: absolute;
+    transform: scaleX(-1);
+    right: -3vw;
+    top: 45vh;
+}
+
+.parralax-obj2 img {
+    width: 32vw;
+}
+
+.cliff {
+    bottom: -10vh;
+}
+
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -15vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%; /* Adjust width to create wave effect */
+}
+
+.wave1 {
+    animation: wavy 25s linear infinite;
+}
+
+.wave2 {
+    animation: wavy 15s linear infinite;
+}
+
+@keyframes wavy {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.section {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.section__data {
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    height: 100vh;
+    color: white;
+}
+
+.last{
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #ffffff;
+    /* border: 1px solid red; */
+}
+
+.last .section__title {
+    text-decoration: none;
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section_img {
+    /* border: 1px solid white; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.section_img img {
+    border-radius: 50px;
+    width: 100%;
+    max-width: 40vw;
+}
+
+.section__title {
+    text-decoration: none;  
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vmax;
+    margin: 1rem 0;
+}
+
+a.none {
+    text-decoration: none;
+    color: azure;
+}
+
+a.none:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    color: azure;
+}
+
+.section__desc {
+    /* border: 1px solid white; */
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.desc__quote {
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer {
+    text-decoration: none;  
+    color: #FFFFFF;
+    z-index: 1;
+    right: 1rem;
+    bottom: 0;
+    font-size: 18px;
+    position: fixed;
+}

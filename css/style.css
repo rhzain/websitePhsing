@@ -14,6 +14,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header {
@@ -55,13 +56,103 @@ main.res {
     height: 120%;
 }
 
+.home,
+.kolam-box {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    /* perspective: 10px;
+    transform-style: preserve-3d; */
+    
+}
+
+/* .home::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+} */
+
+.sun {
+    width: auto;
+    top: -5vh;
+    right: 25vw;
+    /* margin-top: 0; */
+    position: absolute;
+}
+
+.kolam-box {
+    background: linear-gradient(to bottom, #6280CB, #121826);
+}
+
+.parralax-title {
+    top: 10%;
+    font-size: 6em;
+    left: 50%;
+    position: absolute;
+    font-family: 'South Park';
+    transform: scale(1,1.1) translate(-50%, 10%);
+    /* scale: 100vw; */
+}
+
+.cliff,
+.parralax-obj1 {
+    max-width: fit-content;
+    position: absolute;
+    left: -5vw;
+    bottom: 10vh;
+}
+
+.parralax-obj1 img {
+    width: 30vw;
+}
+
+.parralax-obj2 {
+    max-width: fit-content;
+    position: absolute;
+    transform: scaleX(-1);
+    right: -3vw;
+    bottom: 10vh;
+}
+
+.parralax-obj2 img {
+    width: 32vw;
+}
+
+.cliff {
+    bottom: -10vh;
+}
+
+.rod {
+    top: -20%;
+    left: 75%;
+}
+
+.rod img {
+    width: fit-content;
+}
+
+.section {
+    width: 100%;
+}
+
+/* .foreground {
+    transform: translateZ(-5px) scale(1.5);
+}
+
+.foreground.waves,
+.background {
+    transform: translateZ(-10px) scale(2);
+} */
+
 .tengah {
     display: flex;
     justify-content: center;
 }
 
 .bg-res {
-    height: calc(100% + 5vh);
+    height: calc(100% + 10vh);
     width: 100%;
     z-index: -1;
     display: flex;
@@ -149,6 +240,7 @@ main.res {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    z-index: -1;
 }
 
 .wave {
@@ -177,15 +269,71 @@ main.res {
 .deep-sea {
     position: absolute;
     width: 100%;
-    height: 300vh;
+    height: 200vh;
     background: linear-gradient(to bottom, #6280CB, #121826);
     left: 0;
     margin-top: 100vh;
     z-index: -1;
 }
 
+.last{
+    margin-top: 190vh;
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #ffffff;
+    /* border: 1px solid red; */
+}
+
+.last .section__title {
+    text-decoration: none;
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section__title {
+    color: azure;
+    text-decoration: none;  
+    font-family: 'South Park';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vmax;
+    margin: 1rem 0;
+}
+
+a.none {
+    text-decoration: none;
+    color: azure;
+}
+
+a.none:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    color: azure;
+}
+
+.section__desc {
+    /* border: 1px solid white; */
+    font-size: 2rem;
+    font-family: 'TW Cen MT';
+    font-weight: 300;
+    text-align: justify;
+}
+
+.desc__quote {
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .second-depth {
-    position: relative;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     top: 1080px;
@@ -241,6 +389,11 @@ main.res {
     font-size: 2.5rem;
     padding: 10px 0;
     color: #ffffff;
+}
+
+.undersea {
+    display: inline-block;
+    
 }
 
 .carousel-indicators button {
@@ -305,11 +458,11 @@ main.res {
     width: 50vw;
     font-size: 1rem;
     display: flex;
-    justify-content: center!important;
+    justify-content: center !important;
     flex-direction: column;
 }
 
-.login-form{
+.login-form {
     width: 30vw;
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.2);
@@ -360,7 +513,7 @@ main.res {
     margin-right: 15px;
 }
 
-.back-arrow img{
+.back-arrow img {
     filter: invert(100%);
 }
 
@@ -501,6 +654,15 @@ td {
     padding: 8px;
     border: 1px solid #ccc;
     text-align: left;
+}
+
+a button {
+    border-radius: 5px;
+    padding: 0 2%;
+}
+
+a button:hover {
+    filter: invert(100%);
 }
 
 th {
