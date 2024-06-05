@@ -127,6 +127,21 @@ CREATE TABLE pembayaran (
     FOREIGN KEY (id_hasilMancing) REFERENCES hasilMancing(id_hasilMancing)
 );
 
+INSERT INTO ikan (id_ikan, nama_ikan, deskripsi, harga_per_kg) VALUES
+(1, 'Ikan Mas', 'Ikan air tawar yang biasanya hidup di sungai atau ...', 20.00),
+(2, 'Ikan Nila', 'Ikan air tawar yang populer di kalangan pemancing', 25.00),
+(3, 'Ikan Lele', 'Ikan air tawar yang mudah dibudidayakan', 18.00),
+(4, 'Ikan Gurame', 'Ikan air tawar yang memiliki daging yang lezat', 30.00),
+(5, 'Ikan Patin', 'Ikan air tawar yang sering dijadikan menu makanan', 22.00);
+
+INSERT INTO kolam_pemancingan (id_kolam, nama_kolam, deskripsi, kapasitas, harga_perjam) VALUES
+(1, 'Kolam A', 'Kolam berukuran besar dengan air jernih', 50, 100.00),
+(2, 'Kolam B', 'Kolam berukuran sedang dengan fasilitas lengkap', 30, 75.00),
+(3, 'Kolam C', 'Kolam berukuran kecil dengan hiasan alami', 20, 50.00),
+(4, 'Kolam D', 'Kolam berukuran besar dengan pemandangan indah', 60, 120.00),
+(5, 'Kolam E', 'Kolam berukuran sedang dengan akses mudah', 40, 90.00);
+
+
 ```
 
 ### 🛠️ Instalasi
@@ -171,24 +186,6 @@ Ikuti langkah-langkah berikut untuk menginstal aplikasi ini secara manual tanpa 
 
 5. **Jalankan Aplikasi**:
    - Buka browser dan akses aplikasi melalui URL lokal, misalnya: `http://localhost/`
-
-### 📚 Dokumentasi API
-
-- **Reservasi**:
-  - GET `/reservations`: Mendapatkan daftar semua reservasi.
-  - POST `/reservations`: Membuat reservasi baru.
-  
-- **Kolam Pemancingan**:
-  - GET `/pools`: Mendapatkan daftar semua kolam pemancingan.
-  - POST `/pools`: Menambahkan kolam pemancingan baru.
-  
-- **Ikan**:
-  - GET `/fish`: Mendapatkan daftar semua jenis ikan.
-  - POST `/fish`: Menambahkan jenis ikan baru.
-  
-- **Pembayaran**:
-  - GET `/payments`: Mendapatkan daftar semua pembayaran.
-  - POST `/payments`: Menambahkan pembayaran baru.
 
 ### 🎉 Kontribusi
 
