@@ -108,10 +108,10 @@ if (isset($_GET['op']) && $_GET['op'] == 'edit' && isset($_GET['waktu_mulai']) &
                         ?>
                     </select>
 
-                    <label for="pembayaran">Pembayaran:</label>
-                    <select id="pembayaran" name="pembayaran">
-                        <option value="ots" <?php echo ($row['status_reservasi'] == 'Belum Bayar') ? 'selected' : ''; ?>>Bayar di tempat</option>
-                        <option value="trf" <?php echo ($row['status_reservasi'] == 'Sudah Bayar') ? 'selected' : ''; ?>>Transfer</option>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="Belum Bayar" <?php echo ($row['status_reservasi'] == 'Belum Bayar') ? 'selected' : ''; ?>>Belum Bayar</option>
+                        <option value="Sudah Bayar" <?php echo ($row['status_reservasi'] == 'Sudah Bayar') ? 'selected' : ''; ?>>Sudah Bayar</option>
                     </select>
 
                     <input type="hidden" name="id_reservasi" value="<?php echo $row['id_reservasi']; ?>">

@@ -59,7 +59,7 @@ $result = $conn->query($sql);
                         <td><a href="admin-edit.php?op=edit&id=<?php echo $row['id_reservasi']; ?>&waktu_mulai=<?php echo urlencode($row['waktu_mulai']); ?>&waktu_selesai=<?php echo urlencode($row['waktu_selesai']); ?>">
                                 <button type="button">Edit</button>
                             </a>
-                            <a href="delete-reservation.php?id=<?php echo $row['id_reservasi']; ?>" onclick="return confirm('Are you sure you want to delete this reservation?')">
+                            <a href="delete-reservation.php?id=<?php echo $row['id_reservasi']; ?>&status=<?php echo $row['status_reservasi']; ?>" onclick="return confirm('Are you sure you want to delete this reservation?')">
                                 <button type="button">Delete</button>
                             </a>
                         </td>

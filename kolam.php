@@ -56,13 +56,14 @@ $result = $conn->query($sql);
                 <div class="section">
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="section__data <?php echo $row['id_kolam']; ?>">
-                            <div class="left-half">
+                            <div class="right-half">
                                 <div class="section_img">
                                     <img src="img/<?php echo strtolower($row['nama_kolam']); ?>.jpg" alt="<?php echo strtolower($row['nama_kolam']); ?>">
                                 </div>
                             </div>
                             <div class="right-half">
                                 <h2 class="section__title"><?php echo $row['nama_kolam']; ?></h2>
+                                <p class="section__info">Kapasitas: <?php echo $row['kapasitas']; ?>; Harga per Jam: Rp<?php echo $row['harga_perjam']; ?></p>
                                 <div class="section__desc"><?php echo $row['deskripsi']; ?></div>
                             </div>
                         </div>

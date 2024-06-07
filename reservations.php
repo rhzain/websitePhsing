@@ -25,10 +25,8 @@ $kolam = $conn->query($sql_kolam);
                 <label for="address">Alamat Pelanggan:</label>
                 <input type="text" id="address" name="address" required>
 
-                <label for="date">Tanggal Reservasi:</label>
-                <input type="date" id="date" name="date" required>
-
                 <label for="pool">Pilih Kolam Pemancingan:</label>
+                <div class="kolam-info"></div>
                 <select id="pool" name="pool" required>
                     <?php foreach ($kolam as $klm) : ?>
                         <option value="<?php echo $klm['id_kolam']; ?>"><?php echo $klm['nama_kolam']; ?></option>
@@ -59,8 +57,8 @@ $kolam = $conn->query($sql_kolam);
 
                 <label for="pembayaran">Pembayaran:</label>
                 <select id="pembayaran" name="pembayaran" required>
-                    <option value="ots">Bayar di tempat</option>
-                    <option value="trf">Transfer</option>
+                    <option value="Bayar di tempat">Bayar di tempat</option>
+                    <option value="Transfer">Transfer</option>
                 </select>
 
                 <button type="submit">Kirim Reservasi</button>

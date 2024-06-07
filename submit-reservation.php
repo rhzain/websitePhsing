@@ -10,12 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    $date = $_POST['date'];
     $pool = $_POST['pool'];
     $start_time = $_POST['start-time'];
     $end_time = $_POST['end-time'];
     $pembayaran = $_POST['pembayaran'];
-    $status = ($pembayaran == 'trf') ? 'Belum Bayar' : 'Sudah Bayar';
+    $status = $_POST['status'];
 
     if (isset($_POST['edit']) && $_POST['edit'] == 'true') { //dit
         // Update existing reservation
@@ -64,10 +63,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (empty($message)) {
                 $sql_reservasi = "INSERT INTO reservasi (id_pelanggan, id_kolam, tgl_pemakaian, waktu_mulai, waktu_selesai, status_reservasi) 
-                                  VALUES ('$last_customer_id', '$pool_id', '$date', '$start_time', '$end_time', '$status')";
+                                  VALUES ('$last_customer_id', '$pool_id', CURDATE(), '$start_time', '$end_time', 'Belum Bayar')";
                 if ($conn->query($sql_reservasi) === TRUE) {
-                    $message = "Reservation submitted successfully!"; 
-                    $reservation_id = $conn->insert_id;                   
+                    $reservation_id = $conn->insert_id;
+                    $message = "Reservation submitted successfully!";
+                    // Insert payment information
+                    $sql_pembayaran = "INSERT INTO pembayaran (id_reservasi, id_pelanggan, tgl_pembayaran, mtd_pembayaran) 
+                                       VALUES ('$reservation_id', '$last_customer_id', CURDATE(), '$pembayaran')";
+                    if ($conn->query($sql_pembayaran) === TRUE) {
+                        $message = "Reservation and payment submitted successfully!";
+                        $redirect_url = "receipt.php?op=kolam&id=$reservation_id";
+                    } else {
+                        $message = "Error inserting pembayaran: " . $conn->error;
+                    }
                     $redirect_url = "receipt.php?op=kolam&id=$reservation_id";
                 } else {
                     $message = "Error inserting reservasi: " . $conn->error;

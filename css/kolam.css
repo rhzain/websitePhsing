@@ -58,6 +58,10 @@ main.index {
     min-height: 200vh;
 }
 
+p {
+    size: 2rem;
+}
+
 .phisnia {
     position: absolute;
     text-decoration: none;
@@ -99,6 +103,7 @@ main.index {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .right-half {
@@ -288,6 +293,14 @@ a.none:hover {
     text-decoration: none;
     transform: scale(1.1);
     color: azure;
+}
+
+.section__info {
+    /* border: 1px solid white; */
+    top: 1rem;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: justify;
 }
 
 .section__desc {

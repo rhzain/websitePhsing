@@ -11,20 +11,34 @@ include '../config.php';
 if (isset($_GET['id'])) {
     $id_reservasi = $_GET['id'];
 
-    // Prepare the SQL statement to delete the reservation
-    $sql_delete_reservasi = "DELETE FROM reservasi WHERE id_reservasi = ?";
-    $stmt = $conn->prepare($sql_delete_reservasi);
+    // Prepare the SQL statement to fetch the status
+    $sql_get_status = "SELECT status_reservasi FROM reservasi WHERE id_reservasi = ?";
+    $stmt = $conn->prepare($sql_get_status);
     $stmt->bind_param("i", $id_reservasi);
+    $stmt->execute();
+    $stmt->bind_result($status);
+    $stmt->fetch();
+    $stmt->close();
 
-    if ($stmt->execute() === TRUE) {
-        $message = "Reservation deleted successfully!";
-        $redirect_url = "admin-panel.php";
+    if ($status === 'Sudah Bayar') {
+        // Prepare the SQL statement to delete the reservation
+        $sql_delete_reservasi = "DELETE FROM reservasi WHERE id_reservasi = ?";
+        $stmt = $conn->prepare($sql_delete_reservasi);
+        $stmt->bind_param("i", $id_reservasi);
+
+        if ($stmt->execute() === TRUE) {
+            $message = "Reservation deleted successfully!";
+            $redirect_url = "admin-panel.php";
+        } else {
+            $message = "Error deleting reservation: " . $conn->error;
+            $redirect_url = "admin-panel.php";
+        }
+
+        $stmt->close();
     } else {
-        $message = "Error deleting reservation: " . $conn->error;
+        $message = "Reservasi belum dibayar.";
         $redirect_url = "admin-panel.php";
     }
-
-    $stmt->close();
 } else {
     $message = "Invalid request.";
     $redirect_url = "admin-panel.php";
